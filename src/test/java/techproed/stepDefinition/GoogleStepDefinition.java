@@ -1,5 +1,6 @@
 package techproed.stepDefinition;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
@@ -24,7 +25,7 @@ public class GoogleStepDefinition {
         google.cerez.click();
         ReusableMethods.wait(1);
         google.aramaKutusu.sendKeys(arac, Keys.ENTER);
-      //  ReusableMethods.wait(1);
+        //  ReusableMethods.wait(1);
 
     }
 
@@ -36,7 +37,7 @@ public class GoogleStepDefinition {
     @But("kullanici {int} saniye bekler")
     public void kullaniciSaniyeBekler(int sayi) {
         try {
-            Thread.sleep(sayi*1000);
+            Thread.sleep(sayi * 1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -54,6 +55,21 @@ public class GoogleStepDefinition {
     @And("google sayfasinda basiligin {string} icerigini test ett.")
     public void googleSayfasindaBasiliginIceriginiTestEtt(String str) {
         Assert.assertTrue(Driver.getDriver().getTitle().contains(ConfigReader.getProperty(str)));
+    }
+
+    @Then("kullanici data tableda verilen bilgileri aratir")
+    public void kullaniciDataTabledaVerilenBilgileriAratir(DataTable data) {
+
+        System.out.println(data.asList());
+        google.cerez.click();
+        for (int i = 1; i < data.asList().size(); i++) {
+            ReusableMethods.wait(1);
+            google.aramaKutusu.sendKeys(data.asList().get(i), Keys.ENTER);
+            ReusableMethods.wait(1);
+            Assert.assertTrue(Driver.getDriver().getTitle().contains(data.asList().get(i)));
+            google.aramaKutusu.clear();
+        }
+
     }
 
 /*

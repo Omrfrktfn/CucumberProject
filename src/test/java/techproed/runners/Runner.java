@@ -11,11 +11,17 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class) // test calistirici notasyon
-@CucumberOptions(features = "src/test/resources/features",
+@CucumberOptions(plugin = {"pretty",
+                "html:target/default-cucumber-reports.html",
+                "json:target/json-reports/cucumber.json",
+                "junit:target/xml-report/cucumber.xml"},
+        features = "src/test/resources/features",
         glue = {"techproed/stepDefinition"},
         //tags = "@techpro or @iphone",
-         tags = "@techall",
-        dryRun = false)
+        tags = "@techpro",
+        dryRun = false,
+        monochrome = false // true olursa tek renk olur hepsi cikti da
+)
 
 //tags bolumune @all yazarsak tum hepsini calistirir
 

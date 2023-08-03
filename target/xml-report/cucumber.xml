@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="17.992" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="US001 TechproEducation Sayfasi Testi" name="TC03 Sayfada Arama Yapar" time="17.672">
+<system-out><![CDATA[
+Given kullanici techpro sayfasina gider.....................................passed
+Then arama kutusunda mobil aratir...........................................passed
+When cikan dropdown da mobil developer linkine tiklar.......................passed
+And sayfa basliginin Mobile icerdigini test eder............................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
