@@ -4,6 +4,7 @@ Feature: US001 Google Sayfasi Testi
     Given kullanici "googleUrl" sayfasina gitti.
    # And kullanici cerezi kapatir
 
+  @volvo
   Scenario: Arama kutusunda volvo aratir.
     * kullanici google arama kutusunda "volvo" aratir.
     * google sayfasinda basiligin "volvo" icerdigini test eder.

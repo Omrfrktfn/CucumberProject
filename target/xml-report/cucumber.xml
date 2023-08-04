@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="17.992" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="US001 TechproEducation Sayfasi Testi" name="TC03 Sayfada Arama Yapar" time="17.672">
+<testsuite name="Cucumber" time="20.295" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="US001 Google Sayfasi Testi" name="Arama kutusunda ford aratir." time="19.399">
+<failure type="java.lang.AssertionError">
+<![CDATA[java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at techproed.stepDefinition.GoogleStepDefinition.googleSayfasindaBasiliginIcerdiginiTestEder(GoogleStepDefinition.java:34)
+	at ✽.google sayfasinda basiligin "ford" icerdigini test eder.(file:///C:/Users/Omer/IdeaProjects/CucumberProject/src/test/resources/features/day34_Hooks_Excel/US001_HooksTest.feature:14)
+]]>
+</failure>
 <system-out><![CDATA[
-Given kullanici techpro sayfasina gider.....................................passed
-Then arama kutusunda mobil aratir...........................................passed
-When cikan dropdown da mobil developer linkine tiklar.......................passed
-And sayfa basliginin Mobile icerdigini test eder............................passed
-And sayfayi kapatir.........................................................passed
+Given kullanici "googleUrl" sayfasina gitti.................................passed
+* kullanici google arama kutusunda "volvo" aratir...........................passed
+* google sayfasinda basiligin "ford" icerdigini test eder...................failed
+And sayfayi kapatir.........................................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

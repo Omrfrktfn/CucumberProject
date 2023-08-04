@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = {"techproed/stepDefinition"},
         //tags = "@techpro or @iphone",
-        tags = "@techpro",
+        tags = "@arac2",
         dryRun = false,
         monochrome = false // true olursa tek renk olur hepsi cikti da
 )
